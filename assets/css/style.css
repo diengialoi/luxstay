@@ -1,0 +1,746 @@
+
+
+.grid.wide {
+  width: 100%;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 8rem;
+  margin: 0;
+  padding: 0 4px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 111;
+  background-color: #fff;
+}
+
+.header__logo {
+  cursor: pointer;
+}
+.header__logo-svg {
+  position: relative;
+  top: 2px;
+}
+.header__logo-svg:hover {
+  fill: #f65e39;
+  animation: FadeIn ease 1s;
+}
+.header__search-wrap {
+}
+
+.header__search-box {
+  display: flex;
+  width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-left: 8px;
+}
+
+.header__search-location {
+  width: 300px;
+  font-size: 1.6rem;
+  padding: 15px 10px;
+}
+
+.header__search-location-icon,
+.header__search-date-icon,
+.header__search-guest-icon {
+  color: #666;
+}
+
+.header__search-location-text,
+.header__search-date-text,
+.header__search-guest-text {
+  margin-left: 4px;
+}
+.header__search-location-text {
+  border: none;
+  outline: none;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+
+.header__search-date {
+  font-size: 1.6rem;
+  padding: 15px 10px;
+  width: 115px;
+  position: relative;
+}
+.header__search-date::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  border: 1px solid #e7e7e7;
+  height: 30px;
+}
+
+.header__search-guest {
+  font-size: 1.6rem;
+  padding: 15px 10px;
+  width: 115px;
+  position: relative;
+}
+.header__search-guest:hover .header__search-guest-sub {
+  display: block;
+}
+.header__search-guest::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  border: 1px solid #e7e7e7;
+  height: 30px;
+}
+
+.header__search-location-btn {
+  border: none;
+  background-color: transparent;
+  flex: 1;
+}
+
+.header__search-location-btn-icon {
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 11px 21px;
+  background-color: #555;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.header__search-location-btn-icon:hover {
+  background-color: var(--primary-color);
+}
+.header__menu-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 80px;
+  width: 750px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1500px;
+  height: 1500px;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  display: none;
+}
+.close-menu {
+  display: none;
+}
+.header__menu-item {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-left: 25px;
+}
+
+.header__menu-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.header__menu-link:hover {
+  color: var(--primary-color);
+}
+
+.header__menu-link--active {
+  position: relative;
+  font-weight: 500;
+  padding-left: 10px;
+  
+}
+.header__menu-link--active::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fb9236;
+}
+/* Sub header guest */
+.header__search-guest-sub {
+  min-width: 320px;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -50%;
+  list-style: none;
+  background-color: #fff;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  border-radius: 5px;
+  display: none;
+  z-index: 11;
+}
+.header__search-guest-sub::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+.header__search-guest-sub-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 294px;
+  height: 40px;
+  margin-bottom: 18px;
+}
+
+.header-person-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__search-guest-sub-item-person {
+}
+.header__search-guest-sub-item-person-sub {
+  font-size: 1.4rem;
+  color: #555;
+  margin-top: 4px;
+}
+.header-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+}
+
+.header-count-left {
+  border: 1px solid #ced4da;
+  width: 40px;
+  padding: 11px 15px;
+  border-radius: 50%;
+  background-color: #f5f7fa;
+  font-size: 3rem;
+}
+
+.header-count-mid {
+}
+
+.header-count-right {
+  border: 1px solid #ced4da;
+  width: 40px;
+  padding: 11px 14px;
+  border-radius: 50%;
+  background-color: #f5f7fa;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.header-count-right:hover {
+  color: var(--primary-color);
+}
+.header__menu-box-lan {
+  border: none;
+  padding: 3px 12px 3px 4px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header__menu-box-lan::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: -20px;
+  width: 120px;
+  height: 20px;
+}
+.header__menu-box-lan:hover .header__menu-box-lan-sub {
+  display: flex;
+}
+.header__menu-box-lan-img {
+  width: 24px;
+  background-image: url("https://www.luxstay.com/icons/vi.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__menu-box-lan-text {
+  font-size: 1.4rem;
+  margin-left: 8px;
+}
+
+.header__menu-box-lan-icon {
+  padding-left: 20px;
+}
+/* Header menu language sub */
+.header__menu-box-lan-sub {
+  list-style: none;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 436px;
+  background-color: #fff;
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 0;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  z-index: 11;
+  display: none;
+}
+.header__menu-box-lan-sub::after {
+  content: "";
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  width: 1px;
+  height: 90%;
+  background-color: #d6d6d6;
+}
+.header__menu-box-lan-sub::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 27px;
+  border-width: 8px 8px;
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: -1px -1px 2px rgb(0 0 0 / 30%);
+  transform: rotate(45deg);
+}
+.header__menu-box-lan-item {
+  justify-content: flex-start;
+}
+
+.header__menu-box-lan-item-detail {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.header__menu-box-lan-item-detail-img {
+  width: 16px;
+}
+
+.header__menu-box-lan-item-detail-text {
+  font-size: 1.6rem;
+  padding: 0 12px;
+  color: var(--text-color);
+}
+
+.header__menu-box-lan-item-detail-money-unit {
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.is-checked-icon {
+  font-size: 1.2rem;
+  margin-left: 4px;
+  display: none;
+}
+.is-checked .is-checked-icon {
+  display: inline-block;
+}
+
+/*  */
+.header__search-guest-sub-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.header__search-guest-sub-delete {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header__search-guest-sub-accept {
+  font-weight: 500;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.header__search-location-btn {
+}
+
+.header__search-location-btn-icon {
+}
+
+/* slider */
+.slider {
+  max-width: 1200px;
+  height: 290px;
+  margin-top: 8rem;
+  
+}
+.img {
+  width: 1200px;
+  height: 290px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+/* Meunu header on mobile + tablet */
+.menu-header {
+  display: none;
+  margin-left: 40px;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-header-icon {
+  font-size: 2.6rem;
+  color: #555;
+}
+
+/* content */
+.content {
+  
+  color: var(--text-color);
+}
+
+.section {
+  font-size: 1.6rem;
+  font-weight: 400;
+
+}
+
+.section__title {
+  margin-top: 48px;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 900;
+}
+
+.section__about {
+  margin: 20px 0;
+  display: block;
+}
+
+.section__box {
+
+}
+
+.section__box-link {
+  color: var(--text-color);
+  
+}
+.section__box-link:hover {
+  color: var(--primary-color);
+}
+
+.section__about-main {
+  margin: 20px 0;
+  color: #555;
+  display: block;
+}
+
+
+/* địa điểm nổi bật */
+.place-wrap {
+  position: relative;  
+}
+.place-item {
+  position: relative;
+}
+.place-img {
+  width: 100%;
+  height: 292px;
+  border-radius: 5px;
+}
+.place-info {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+}
+
+.place-info-title {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 900;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.place-info-sub {
+  color: #fff;
+}
+
+.place-info-sub-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.place-info-sub-text {
+  color: #ebecee;
+}
+/* btn */
+.btn-left {
+  border: none;
+    background-color: #fff;
+    padding: 15px 22px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    box-shadow: 0 0 2px 0.3px rgb(0 0 0 / 30%);
+}
+
+.btn-left-icon {
+  font-size: 2.5rem;
+}
+.btn-right {
+  border: none;
+  background-color: #fff;
+  padding: 15px 22px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 2px 0.3px rgb(0 0 0 / 30%);
+  cursor: pointer;
+}
+.btn-right:hover {
+  color: var(--primary-color);
+}
+.btn-right-icon {
+  font-size: 2.5rem;
+}
+/* Ưu đãi */
+.section-endow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-endow-link {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.endow-item {
+
+}
+
+.endow-item-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Gợi ý */
+.suggest-item {
+  margin-top: 16px;
+}
+
+.suggest-item-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.suggest-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggest-item-title {
+  color: #555;
+  text-transform: uppercase;
+  margin: 8px 0;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+}
+
+.suggest-item-about {
+  color: var(--text-color);
+  line-height: 2rem;
+
+}
+
+/* Khám phá */
+.discovery-item {
+  position: relative;
+}
+
+.discovery-item-img {
+  width: 100%;
+  height: 331px;
+}
+
+.discovery-item-header {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  background-color: #bebebd;
+  padding: 4px 22px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+}
+
+.discovery-item-footer {
+  font-size: 1.9rem;
+    color: #fff;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 24px;
+    line-height: 2.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+/* Hướng dẫn */
+.manual-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Tìm kiếm chỗ ở giá tốt nhất*/
+.content-end {
+  margin-top: 60px;
+}
+.end-item {
+
+}
+
+.end-item-top {
+
+}
+
+.end-item-top-img {
+  width: 343px;
+  height: 70px;
+}
+
+.end-item-title {
+  text-transform: uppercase;
+  margin: 22px 0;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.end-item-description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+.end-item-bot {
+  margin: 50px 0;
+  display: flex;
+}
+
+.end-item-bot-qr {
+  width: 154px;
+  height: 154px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.end-item-apps {
+  padding-left: 30px;
+}
+.end-item-app {
+  padding: 0 20px 20px 0;
+}
+.big-img {
+  width: 100%;
+}
+
+/* footer */
+.footer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.footer-item {
+  display: flex;
+  flex-direction: column;
+}
+.footer-item-header {
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  margin: 20px 0;
+}
+.footer-item-apps {
+  flex-direction: column;
+}
+.footer-item-app {
+  display: block;
+}
+.footer-item-body {
+  display: flex;
+  flex-direction: column;
+}
+.footer-item-link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-transform: capitalize;
+  color: var(--text-color);
+  margin: 4px 0;
+}
+.footer-item-link:hover {
+  color: var(--primary-color);
+}
+.box-wrap {
+  display: flex;
+}
+.box-wrap-qr {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.box-wrap-apps {
+  margin: 0 12px;
+}
+.box-wrap-app {
+  width: 104px;
+  height: 32px;
+  margin-top: 4px;
+}
+/* modal */
+/* .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+} */
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}

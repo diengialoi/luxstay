@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #f65e39;
+    --text-color: #333;
+}
+html {
+    font-family: roboto, arial, helvetica, sans-serif;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+}
+
+.layout-default {
+    padding: 10px;
+    background: rgba(0,0,0,.04);
+    border-radius: 50%;
+}
+.disabled {
+    opacity: 0.4;
+    color: #ced4da;
+    cursor: default;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.is-checked {
+    
+}
+/* animation */
+@keyframes FadeIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        overflow: 1;
+    }
+}
+
+
+@keyframes menuNavSub {
+    from {
+        opacity: 0;
+        left: -500px;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
